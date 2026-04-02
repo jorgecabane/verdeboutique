@@ -1,0 +1,157 @@
+.section {
+  background: #13120f;
+  border-top: 1px solid rgba(184, 149, 106, 0.08);
+}
+
+.header {
+  padding: 64px 24px 32px;
+  text-align: center;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 9px;
+  letter-spacing: 5px;
+  color: var(--color-accent-gold);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.headerTitle {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-text-primary);
+}
+
+.showcase {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Sticky image — desktop only */
+.stickyImage {
+  display: none;
+  position: sticky;
+  top: 60px;
+  height: calc(100vh - 60px);
+  background: linear-gradient(135deg, #1a1915, #242320);
+  z-index: 1;
+  overflow: hidden;
+}
+
+.stickyImg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Mobile: show image per plant */
+.mobileImage {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-bottom: 24px;
+}
+
+.mobileImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.plantList {
+  position: relative;
+  z-index: 2;
+}
+
+.plantItem {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 48px 24px;
+}
+
+.plantInfo {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.plantCategory {
+  font-family: var(--font-body);
+  font-size: 9px;
+  letter-spacing: 3px;
+  color: var(--color-accent-green);
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.plantName {
+  font-family: var(--font-heading);
+  font-size: 36px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.plantPrice {
+  font-family: var(--font-body);
+  font-size: 20px;
+  color: var(--color-accent-gold);
+  margin-bottom: 16px;
+}
+
+.plantDescription {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+  margin-bottom: 24px;
+}
+
+.plantCta {
+  display: inline-block;
+}
+
+/* Desktop: side-by-side with sticky image */
+@media (min-width: 768px) {
+  .showcase {
+    flex-direction: row;
+  }
+
+  .stickyImage {
+    display: block;
+    width: 50%;
+    flex-shrink: 0;
+  }
+
+  .mobileImage {
+    display: none;
+  }
+
+  .plantList {
+    width: 50%;
+  }
+
+  .plantItem {
+    min-height: 100vh;
+    padding: 48px 48px;
+  }
+
+  .plantName {
+    font-size: 42px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .plantItem {
+    padding: 48px 64px;
+  }
+}

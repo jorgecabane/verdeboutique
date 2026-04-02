@@ -1,0 +1,58 @@
+@property --gradient-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@property --color-a {
+  syntax: '<color>';
+  initial-value: #0f0f0d;
+  inherits: false;
+}
+
+@property --color-b {
+  syntax: '<color>';
+  initial-value: #1a1915;
+  inherits: false;
+}
+
+.gradient {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: radial-gradient(
+    ellipse at 50% 60%,
+    transparent 0%,
+    var(--color-a) 30%,
+    var(--color-b) 60%,
+    #0f0f0d 100%
+  );
+  animation: shiftGradient 12s ease-in-out infinite;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+@keyframes shiftGradient {
+  0% {
+    --color-a: rgba(30, 45, 25, 0.4);
+    --color-b: rgba(26, 25, 21, 0.6);
+  }
+  33% {
+    --color-a: rgba(40, 35, 20, 0.4);
+    --color-b: rgba(20, 30, 18, 0.6);
+  }
+  66% {
+    --color-a: rgba(25, 35, 22, 0.4);
+    --color-b: rgba(35, 30, 20, 0.6);
+  }
+  100% {
+    --color-a: rgba(30, 45, 25, 0.4);
+    --color-b: rgba(26, 25, 21, 0.6);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gradient {
+    animation: none;
+  }
+}

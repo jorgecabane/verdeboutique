@@ -1,0 +1,33 @@
+.countdown {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+}
+
+.unit { text-align: center; }
+
+.number {
+  font-family: var(--font-heading);
+  font-size: var(--text-3xl);
+  font-style: italic;
+  color: var(--color-accent-gold);
+  line-height: 1;
+  min-width: 2ch;
+  display: inline-block;
+}
+
+.label {
+  font-size: 7px;
+  letter-spacing: 0.2em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  margin-top: var(--space-xs);
+}
+
+.separator {
+  font-family: var(--font-heading);
+  font-size: var(--text-2xl);
+  color: var(--color-text-muted);
+  align-self: flex-start;
+  padding-top: 4px;
+}

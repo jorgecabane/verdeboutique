@@ -1,0 +1,91 @@
+.section {
+  position: relative;
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--color-bg-primary);
+}
+
+/* Large background leaf — fills section, very low opacity like a watermark */
+.leafBg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  will-change: opacity, transform;
+  pointer-events: none;
+}
+
+.leafSvg {
+  width: auto;
+  height: 85%;
+  max-height: 500px;
+  display: block;
+  /* Recolor black SVG to warm gold — invert to white then sepia/hue shift */
+  filter: invert(1) sepia(0.3) saturate(0.5) hue-rotate(5deg) brightness(0.8);
+}
+
+/* Text centered over the leaf */
+.caption {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  will-change: opacity, transform;
+}
+
+.label {
+  font-family: var(--font-body);
+  font-size: 9px;
+  letter-spacing: 5px;
+  color: var(--color-accent-gold);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  background: rgba(15, 15, 13, 0.7);
+  backdrop-filter: blur(8px);
+  padding: 8px 20px;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  line-height: 1.4;
+}
+
+.divider {
+  width: 50px;
+  height: 0.5px;
+  background: linear-gradient(90deg, transparent, var(--color-accent-gold), transparent);
+  margin: 18px auto 0;
+  transform-origin: center;
+}
+
+@media (min-width: 640px) {
+  .title {
+    font-size: 34px;
+  }
+
+  .leafSvg {
+    max-height: 600px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .title {
+    font-size: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .leafBg,
+  .caption {
+    will-change: auto;
+  }
+}
