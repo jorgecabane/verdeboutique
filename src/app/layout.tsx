@@ -1,10 +1,6 @@
 import type { Metadata } from 'next'
 import { Playfair_Display, EB_Garamond } from 'next/font/google'
 import './globals.css'
-import { Header } from '@/components/layout/Header/Header'
-import { Footer } from '@/components/layout/Footer/Footer'
-import { CartProvider } from '@/hooks/useCart'
-import { CartDrawer } from '@/components/cart/CartDrawer/CartDrawer'
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -44,21 +40,10 @@ export const metadata: Metadata = {
   },
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${playfair.variable} ${garamond.variable}`}>
-      <body>
-        <CartProvider>
-          <Header />
-          <main style={{ paddingTop: '60px' }}>{children}</main>
-          <Footer />
-          <CartDrawer />
-        </CartProvider>
-      </body>
+      <body>{children}</body>
     </html>
   )
 }
