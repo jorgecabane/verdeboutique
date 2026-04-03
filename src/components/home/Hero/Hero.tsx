@@ -27,7 +27,7 @@ const lineVariants = {
 function ImageFallback() {
   return (
     <div className={styles.mobileBg}>
-      <img src="/images/plants/crystallinum.jpg" alt="" className={styles.mobileBgImg} />
+      <img src="/images/hero-plant.jpg" alt="" className={styles.mobileBgImg} />
     </div>
   )
 }

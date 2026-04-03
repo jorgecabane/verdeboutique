@@ -161,8 +161,8 @@ export default function EditorialPage() {
           position: 'relative',
         }}>
           <img
-            src="/images/plants/crystallinum.jpg"
-            alt="Anthurium Crystallinum — planta de colección"
+            src="/images/hero-plant.jpg"
+            alt="Plantas de colección"
             style={{
               width: '100%',
               height: '100%',

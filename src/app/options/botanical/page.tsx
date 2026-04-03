@@ -255,8 +255,8 @@ function Hero() {
       {/* Right: photo */}
       <div style={{ position: 'relative', overflow: 'hidden', minHeight: 480 }}>
         <Image
-          src="/images/plants/crystallinum.jpg"
-          alt="Anthurium Crystallinum"
+          src="/images/hero-plant.jpg"
+          alt="Plantas de colección"
           fill
           style={{ objectFit: 'cover', objectPosition: 'center' }}
           priority
